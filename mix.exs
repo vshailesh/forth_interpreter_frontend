@@ -73,7 +73,7 @@ defmodule ForthInterpreterFrontend.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
-      {:forth_interpreter, git: "https://github.com/vshailesh/forth_interpreter", branch: "test"},
+      {:forth_interpreter, git: "https://github.com/vshailesh/forth_interpreter", branch: "test"}
     ]
   end
 
@@ -90,7 +90,11 @@ defmodule ForthInterpreterFrontend.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["compile", "tailwind forth_interpreter_frontend", "esbuild forth_interpreter_frontend"],
+      "assets.build": [
+        "compile",
+        "tailwind forth_interpreter_frontend",
+        "esbuild forth_interpreter_frontend"
+      ],
       "assets.deploy": [
         "tailwind forth_interpreter_frontend --minify",
         "esbuild forth_interpreter_frontend --minify",

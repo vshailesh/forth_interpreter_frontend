@@ -10,7 +10,8 @@ defmodule ForthInterpreterFrontend.Application do
     children = [
       ForthInterpreterFrontendWeb.Telemetry,
       ForthInterpreterFrontend.Repo,
-      {DNSCluster, query: Application.get_env(:forth_interpreter_frontend, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:forth_interpreter_frontend, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: ForthInterpreterFrontend.PubSub},
       # Start a worker by calling: ForthInterpreterFrontend.Worker.start_link(arg)
       # {ForthInterpreterFrontend.Worker, arg},

@@ -13,7 +13,7 @@ defmodule ForthInterpreterFrontend.ForthExpr do
   @doc false
   def changeset(forth_expr, attrs \\ %{}) do
     forth_expr
-    |> cast(attrs, [:expr, :init_stack])
-    |> validate_required([:expr, :init_stack])
+    |> cast(attrs, [:expr, :init_stack, :output])
+    |> validate_required([:expr, :init_stack, :output])
   end
 end

@@ -19,6 +19,7 @@ defmodule ForthInterpreterFrontendWeb.Router do
 
     # live "/", PageController, :home
     live "/", ForthForm
+    live "/history", History
   end
 
   # Other scopes may use custom stacks.
