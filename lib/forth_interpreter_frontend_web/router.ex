@@ -17,7 +17,9 @@ defmodule ForthInterpreterFrontendWeb.Router do
   scope "/", ForthInterpreterFrontendWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # live "/", PageController, :home
+    live "/", ForthForm
+    live "/history", History
   end
 
   # Other scopes may use custom stacks.
